@@ -1,0 +1,15 @@
+
+# The train/test net protocol buffer definition
+net: "train_val_conv.prototxt"
+test_iter:50
+test_interval:250
+base_lr: 0.00000005
+momentum: 0.9
+weight_decay: 0.004
+lr_policy: "step"
+gamma: 0.8
+stepsize:1000000
+display: 250
+max_iter: 10000000
+# solver mode: CPU or GPU
+solver_mode: CPU
