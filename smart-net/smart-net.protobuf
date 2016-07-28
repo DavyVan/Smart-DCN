@@ -1,97 +1,206 @@
-name: "smart_net"
+name: "smart-net"
 
 layer {
-    name: "raw_data"
-    type: "HDF5Data"
-    top: "data"
-    top: "label"
-    include {
-        phase: train
-    }
-    hdf5_data_param {
-        source: "train.txt"
-        batch_size: 50
-    }
+  name: "data"
+  type: "HDF5Data"
+  top: "data"
+  top: "label"
+  include {
+    phase: TRAIN
+  }
+  hdf5_data_param {
+    source: "train.txt"
+    batch_size: 50
+  }
 }
 
+//split the data into matrix and demand
 layer {
-    name: "slicer"
-    type: "Slice"
-    bottom: "raw_data"
-    top: "matrix"
-    top: "demand"
-    slice_param {
-        axis: 1
-        slice_point: 1
-    }
+  name: "slicer_label"
+  type: "Slice"
+  bottom: "data"
+  top: "matrix"
+  top: "demand"
+  slice_param {
+    axis: 1
+    slice_point: 1
+  }
 }
 
+//matrix --> conv1 --> conv1
+//borrowed
 layer {
-    name: "conv1"
-    type: "Convolution"
-    bottom: "matrix"
-    top: "conv1_result"
-    param {
-        lr_mult: 1
-        decay_mult: 1
+  name: "conv1"
+  type: "Convolution"
+  bottom: "matrix"
+  top: "conv1"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 15
+    kernel_size: 5
+    stride: 1
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
     }
-    param {
-        lr_mult: 2
-        decay_mult: 0
+    bias_filler {
+      type: "constant"
+      value: 0
     }
-    convolution_param {
-        num_output: 15
-        kernel_size: 5
-        stride: 1
-        weight_filler {
-            type: "gaussian"
-            std: 0.01
-        }
-        bias_filler {
-            type: "constant"
-            value: 0
-        }
-    }
+  }
 }
 
+//conv1 <==> ReLU
+//borrowed
 layer {
-    name: "relu1"
-    type: "ReLU"
-    bottom: "conv1_result"
-    top: "conv1_result"
+  name: "relu1"
+  type: "ReLU"
+  bottom: "conv1"
+  top: "conv1"
 }
 
+//demand --> conv2 --> conv2
+//borrowed
 layer {
-    name: "conv2"
-    type: "Convolution"
-    bottom: "conv1_result"
-    top: "conv2_result"
-    param {
-        lr_mult: 1
-        decay_mult: 1
+  name: "conv2"
+  type: "Convolution"
+  bottom: "demand"
+  top: "conv2"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 15
+    kernel_size: 5
+    stride: 1
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
     }
-    param {
-        lr_mult: 2
-        decay_mult: 0
+    bias_filler {
+      type: "constant"
+      value: 0
     }
-    convolution_param {
-        num_output: 25
-        kernel_size: 3
-        stride: 1
-        weight_filler {
-            type: "gaussian"
-            std: 0.01
-        }
-        bias_filler {
-            type: "constant"
-            value: 0
-        }
-    }
+  }
 }
 
+//conv2 <==> ReLU
+//borrowed
 layer {
-    name: "relu2"
-    type: "ReLU"
-    bottom: "conv2_result"
-    top: "conv2_result"
+  name: "relu2"
+  type: "ReLU"
+  bottom: "conv2"
+  top: "conv2"
 }
+
+//conv1 --> conv3 --> conv3
+//borrowed
+layer {
+  name: "conv3"
+  type: "Convolution"
+  bottom: "conv1"
+  top: "conv3"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 25
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+
+//conv3 <==> ReLU
+//borrowed
+layer {
+	name: "relu3"
+	type: "ReLU"
+	bottom: "conv3"
+	top: "conv3"
+}
+
+//conv2 --> conv4 --> conv4
+//borrowed
+layer {
+  name: "conv4"
+  type: "Convolution"
+  bottom: "conv2"
+  top: "conv4"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 25
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+
+//conv4 <==> ReLU
+//borrowed
+layer{
+	name: "relu4"
+	type: "ReLU"
+	bottom: "conv4"
+	top: "conv4"
+}
+
+
+//conv3 \
+//       - concat
+//conv4 /
+//borrowed
+layer {
+	name: "concat"
+	type: "Concat"
+	bottom: "conv3"
+	bottom: "conv4"
+	top: "concat"
+    propagate_down: 0   //all the layer before this aren't involved in training
+    propagate_down: 0   //all the layer before this aren't involved in training
+	concat_param {
+    axis: 1
+  }
+}
+
+/**************************************
+* Scoring Function End
+**************************************/
