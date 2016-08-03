@@ -350,7 +350,7 @@ int main()
 {
 	int count = 0;
 
-	while (count < 10)
+	while (count < 10000)
 	{
 		clock_t start, finish;
 		double duration;
