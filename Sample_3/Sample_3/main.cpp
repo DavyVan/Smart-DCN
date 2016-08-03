@@ -350,51 +350,60 @@ int main()
 {
 	int count = 0;
 
-	while (count < 10000)
+	while (count < 10)
 	{
-	clock_t start, finish;
-	double duration;
-	start = clock();
-	getDemand(demandMatrix);//get demand
+		clock_t start, finish;
+		double duration;
+		start = clock();
+		getDemand(demandMatrix);//get demand
 
-	//initial beam
-	
-	for (int i = 0; i < BEAMWIDTH; i++)
-		beamScore[i] = INT_MAX;
+		//initial beam
 
-	//initial topo
-	memset(topo, 0, sizeof(int)*nodenum*nodenum);
-	for (int i = 0; i < nodenum;i++)
-	for (int j = 0; j < nodenum; j++)
-		topo[i][j] = 0;
-	initialToRLink(topo);
-	initialFixedLink(topo);
-	
+		for (int i = 0; i < BEAMWIDTH; i++)
+			beamScore[i] = INT_MAX;
 
-	getBestTopo(demandMatrix,topo, beamTopo, beamScore,bestTopo,dist,ntopo);
+		//initial topo
+		//2016.8.3: No.i data is related with No.i-1, so except for the No.0 is initialized with zero the others are initialized with the No.i-1 topo.
+		if (count == 0)
+		{
+			memset(topo, 0, sizeof(int) *nodenum*nodenum);
+			for (int i = 0; i < nodenum; i++)
+				for (int j = 0; j < nodenum; j++)
+					topo[i][j] = 0;
+			initialToRLink(topo);
+			initialFixedLink(topo);
+		}
+		else
+		{
+			//copy bestTopo into topo to initialize topo
+			memcpy(topo, bestTopo, sizeof(int) * nodenum * nodenum);
+		}
 
-	finish = clock();
-	duration = (double)(finish - start) / CLOCKS_PER_SEC;
-	string demandPath = "F:\\Learning\\demand8\\demand";
-	string topoPath = "F:\\Learning\\topo8\\topo";
-	string timePath = "F:\\Learning\\time8\\time";
-	stringstream ss;
-	ss << count;
-	string s = ss.str();
-	demandPath += s + ".txt";
-	topoPath += s + ".txt";
-	timePath += s + ".txt";
-	//cout << demandPath << endl;
-	//cout << topoPath << endl;
-	
-	ofstream f(timePath);
-	f << duration;
-	f.close();
-	writeDemandArray2File(demandPath, demandMatrix, ToRnum);
-	writeTopoArray2File(topoPath, bestTopo, nodenum);
-	//printTopo(bestTopo);
-	cout << endl;
-	count++;
+
+		getBestTopo(demandMatrix, topo, beamTopo, beamScore, bestTopo, dist, ntopo);
+
+		finish = clock();
+		duration = (double) (finish - start) / CLOCKS_PER_SEC;
+		string demandPath = "..\\Sample_Data\\demand\\demand";
+		string topoPath = "..\\Sample_Data\\topo\\topo";
+		string timePath = "..\\Sample_Data\\time\\time";
+		stringstream ss;
+		ss << count;
+		string s = ss.str();
+		demandPath += s + ".txt";
+		topoPath += s + ".txt";
+		timePath += s + ".txt";
+		//cout << demandPath << endl;
+		//cout << topoPath << endl;
+
+		ofstream f(timePath);
+		f << duration;
+		f.close();
+		writeDemandArray2File(demandPath, demandMatrix, ToRnum);
+		writeTopoArray2File(topoPath, bestTopo, nodenum);
+		//printTopo(bestTopo);
+		cout << endl;
+		count++;
 	}
 	return 0;
 }
