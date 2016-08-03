@@ -237,7 +237,7 @@ void getBestTopo(int demand[][SIZE],int topo[][nodenum], int beamTopo[BEAMWIDTH]
 			}
 			if(tmpIndex!=-1) 
 				copy_topo(beamTopo[tmpIndex],topo);
-			cout << "************************" << endl;
+			//cout << "************************" << endl;
 		}
 		
 		
@@ -247,9 +247,9 @@ void getBestTopo(int demand[][SIZE],int topo[][nodenum], int beamTopo[BEAMWIDTH]
 			copy_topo(topo, bestTopo);
 		}
 		count++;
-		cout << curScore << endl;
+		//cout << curScore << endl;
 	}
-	cout << curBest << endl;
+	//cout << curBest << endl;
 }
 
 //initial OSC links between ToRs
