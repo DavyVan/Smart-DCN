@@ -1,5 +1,11 @@
 name: "smart-net"
 
+/*
+2016.8.5
+Because I've modified the data format,
+so the old data layer is obsolete
+*/
+/*
 layer {
   name: "data"
   type: "HDF5Data"
@@ -13,7 +19,13 @@ layer {
     batch_size: 50
   }
 }
-
+*/
+/*
+2016.8.5
+Because of the new data format, spliting data_topo, data_demand and label,
+so there is no need for the old slice layer
+*/
+/*
 //split the data into matrix and demand
 layer {
   name: "slicer_label"
@@ -26,7 +38,24 @@ layer {
     slice_point: 1
   }
 }
+*/
 
+//new data layer added 2016.8.5
+layer {
+  name: "data"
+  type: "HDF5Data"
+  top: "matrix"
+  top: "demand"
+  top: "label"
+  include {
+    phase: TRAIN
+  }
+  hdf5_data_param {
+    source: "~/Desktop/smart_net_train.hdf5"
+    batch_size: 50
+  }
+}
+/* without time involved
 //matrix --> conv1 --> conv1
 //borrowed
 layer {
@@ -65,6 +94,7 @@ layer {
   bottom: "conv1"
   top: "conv1"
 }
+*/
 
 //demand --> conv2 --> conv2
 //borrowed
@@ -105,6 +135,7 @@ layer {
   top: "conv2"
 }
 
+/* without time involved
 //conv1 --> conv3 --> conv3
 //borrowed
 layer {
@@ -143,6 +174,7 @@ layer {
 	bottom: "conv3"
 	top: "conv3"
 }
+*/
 
 //conv2 --> conv4 --> conv4
 //borrowed
@@ -184,6 +216,7 @@ layer{
 }
 
 
+/* without time involved
 //conv3 \
 //       - concat
 //conv4 /
@@ -200,6 +233,7 @@ layer {
     axis: 1
   }
 }
+*/
 
 /**************************************
 * Scoring Function End

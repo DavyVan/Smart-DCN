@@ -12,9 +12,9 @@ OUTPUT_FILE_NAME = "smart_net_train.hdf5"
 
 # write data from multi-dimentional array into HDF5 file
 def toHDF5(data_topo, data_demand, label):
-	data_topo = data_topo.reshape(DATASET_SIZE, TOPO_ROW_NUM, TOPO_ROW_NUM)
-	data_demand = data_demand.reshape(DATASET_SIZE, DEMAND_ROW_NUM, DEMAND_ROW_NUM)
-	label = label.reshape(DATASET_SIZE, TOPO_ROW_NUM, TOPO_ROW_NUM)
+	data_topo = data_topo.reshape(DATASET_SIZE, 1, TOPO_ROW_NUM, TOPO_ROW_NUM)
+	data_demand = data_demand.reshape(DATASET_SIZE, 1, DEMAND_ROW_NUM, DEMAND_ROW_NUM)
+	label = label.reshape(DATASET_SIZE, 1, TOPO_ROW_NUM, TOPO_ROW_NUM)
 
 	with h5py.File(OUTPUT_FILE_NAME, "w") as f:
 		f["data_topo"] = data_topo.astype(np.float32)
