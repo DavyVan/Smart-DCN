@@ -51,7 +51,7 @@ layer {
     phase: TRAIN
   }
   hdf5_data_param {
-    source: "~/Desktop/smart_net_train.hdf5"
+    source: "/home/fanquan/Desktop/smart_net_train.hdf5"
     batch_size: 50
   }
 }
@@ -183,6 +183,7 @@ layer {
   type: "Convolution"
   bottom: "conv2"
   top: "conv4"
+  propagate_down: 0     // NOTICE: Remove this line if enable time_involved
   param {
     lr_mult: 1
     decay_mult: 1
@@ -238,3 +239,42 @@ layer {
 /**************************************
 * Scoring Function End
 **************************************/
+
+// the first output layer, it's similar to InnerProductLayer
+layer {
+    name: "output1"
+    type: "MultiOutput"
+    bottom: "conv4"     // or "concat", if time_involved enabled
+    top: "output1"
+    param {
+        lr_mult: 1
+        decay_mult: 1
+    }
+    param {
+        lr_mult: 2
+        decay_mult: 0
+    }
+    multi_output_param {
+        num_output: 1
+        weight_filler {
+            type: "gaussian"
+            std: 0.005
+        }
+        bias_filler {
+            type: "constant"
+            value: 0.1
+        }
+
+        full_topo_file: "/home/fanquan/Desktop/output_full_topo.txt"
+        layer_no: 1
+    }
+}
+
+// loss
+layer {
+    name: "loss"
+    type: "EuclideanLoss"
+    bottom: "output1"
+    bottom: "label"
+    top: "loss"
+}
