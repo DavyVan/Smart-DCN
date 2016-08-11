@@ -75,7 +75,7 @@ def main(argv):
 		for line in range(0, TOPO_ROW_NUM):
 			line_data = (label_topo_file.readline().split(" "))[0:TOPO_ROW_NUM]
 			for item in range(0, TOPO_ROW_NUM):
-				if (full_topo[line][item] == layer_no):
+				if (item > line and full_topo[line][item] == layer_no):		# upper triangle
 					label_topo.append(int(line_data[item]))
 					label_size += 1
 		label_topo_file.close()
