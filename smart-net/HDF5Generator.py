@@ -32,8 +32,8 @@ def toHDF5(data_topo, data_demand, label, label_size, isTrain):
 	label = label.reshape(data_size, label_size)
 
 	with h5py.File((OUTPUT_FILE_NAME if isTrain else OUTPUT_TEST_FILE_NAME), "w") as f:
-		f["data_topo"] = data_topo.astype(np.float32)
-		f["data_demand"] = data_demand.astype(np.float32)
+		f["matrix"] = data_topo.astype(np.float32)
+		f["demand"] = data_demand.astype(np.float32)
 		f["label"] = label.astype(np.float32)
 
 def generate(isTrain, layer_no, time_involved):

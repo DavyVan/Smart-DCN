@@ -1,5 +1,5 @@
 # The train/test net protocol buffer definition
-net: "smart-net-withou-comments.protobuf"
+net: "smart-net-without-comments.protobuf"
 test_iter:50
 test_interval:250
 base_lr: 0.00000005

@@ -4,9 +4,25 @@ layer {
   type: "HDF5Data"
   top: "demand"
   top: "label"
+  include {
+      phase: TRAIN
+  }
   hdf5_data_param {
     source: "train.txt"
     batch_size: 50
+  }
+}
+layer {
+  name: "data"
+  type: "HDF5Data"
+  top: "demand"
+  top: "label"
+  include {
+      phase: TEST
+  }
+  hdf5_data_param {
+    source: "test.txt"
+    batch_size: 10
   }
 }
 
