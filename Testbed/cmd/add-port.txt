@@ -1,0 +1,9 @@
+
+// Add new server to 2 bridges on Pica8-1
+ovs-vsctl add-port br0 te-1/1/19 -- set interface te-1/1/19 type=pica8
+ovs-vsctl add-port br1 te-1/1/20 -- set interface te-1/1/20 type=pica8
+
+// Add new server to 3 bridges on Pica8-2
+ovs-vsctl add-port br0 te-1/1/5 -- set interface te-1/1/5 type=pica8
+ovs-vsctl add-port br1 te-1/1/6 -- set interface te-1/1/6 type=pica8
+ovs-vsctl add-port br2 te-1/1/7 -- set interface te-1/1/7 type=pica8
