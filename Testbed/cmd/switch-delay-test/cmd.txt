@@ -1,0 +1,12 @@
+ovs-ofctl add-flow br0 in_port=15,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:25,28
+ovs-ofctl add-flow br0 in_port=25,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:15
+
+ovs-ofctl add-flow br1 in_port=36,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:16
+ovs-ofctl add-flow br1 in_port=16,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:33
+
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:44
+
+测试的时候使用ping命令的flood模式(需要权限)：
+sudo ping -f -i 0.001 -w 0.001 192.168.110.16
+
+这样丢包的数量大概就是网络中断的时间（毫秒）
