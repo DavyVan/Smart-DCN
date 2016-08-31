@@ -1,0 +1,14 @@
+Optical Switch:
+Brand: CoAdna
+型号未知，价格未知
+利用的是他们的解决方案，现在所用的交换机是厂商与学校合作定制的产品，在解决方案白皮书中可以看到与其合作发表的学术文章列表
+http://www.coadna.com/tw/solutions.html#_top
+
+Electrical Switch:
+Pica8-3780 USD $13,410 on NetGate
+Pica8-3922 USD $9,810 on NetGate
+48 ports 10Gbps
+
+Server:
+DELL R320 加配网卡
+CNY ￥8600+ on ZOL

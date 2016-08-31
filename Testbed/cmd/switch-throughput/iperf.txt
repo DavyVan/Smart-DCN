@@ -8,8 +8,8 @@ rm libiperf0_3.1.3-1_amd64.deb iperf3_3.1.3-1_amd64.deb
 
 // Run iperf
 //server
-iperf -p 5201 -f m -i 0.5 -s -V
+iperf3 -p 5201 -f m -i 0.5 -s -V
 //client
 // The minimum interval is 0.5s
 // -b implies UDP test
-iperf -p 5201 -f m -i 0.5 -c 192.168.110.13 -V -b 100M -t 20
+iperf3 -p 5201 -f m -i 0.5 -c 192.168.110.13 -V -b 100M -t 20
