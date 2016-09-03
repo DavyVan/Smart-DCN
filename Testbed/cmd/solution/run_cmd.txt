@@ -1,0 +1,4 @@
+server:
+/home/quan/TrafficGenerator/bin/server -p 5001 -d
+client:
+/home/quan/TrafficGenerator/bin/client -b 10000 -c /home/quan/TrafficGenerator/conf/client_config_.txt -n 1 -l /home/quan/flows_.txt 
