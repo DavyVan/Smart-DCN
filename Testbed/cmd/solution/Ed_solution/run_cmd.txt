@@ -16,6 +16,13 @@ iperf3 -p 500 -f m -i 0.5 -c 192.168.110. -V -n 10240 -l 1M -S 0 --logfile ~/res
 // -n 341333 for 33.3333 * 10G
 
 
+//// Use at
+// Server side
+at 14:00
+// Client side
+at 14:05
+
+
 //// On server 0 (sing113)
 // server side
 iperf3 -p 5001 -s -D -I ~/pid_1.txt
