@@ -1,0 +1,20 @@
+iperf 3.1.3
+Linux host108 3.16.0-4-amd64 #1 SMP Debian 3.16.7-ckt11-1+deb8u4 (2015-09-19) x86_64
+Time: Wed, 07 Sep 2016 03:00:00 GMT
+Connecting to host 192.168.110.7, port 5005
+      Cookie: host108.1473217200.902602.1bd88d6913
+      TCP MSS: 1448 (default)
+[  5] local 192.168.110.8 port 41379 connected to 192.168.110.7 port 5005
+Starting Test: protocol: TCP, 1 streams, 131072 byte blocks, omitting 0 seconds, 786432000 bytes to send
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  5]   0.00-0.50   sec   200 MBytes  3358 Mbits/sec  135    317 KBytes       
+[  5]   0.50-1.00   sec   470 MBytes  7882 Mbits/sec    0    372 KBytes       
+[  5]   1.00-1.09   sec  80.0 MBytes  7761 Mbits/sec    0    383 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Test Complete. Summary Results:
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  5]   0.00-1.09   sec   750 MBytes  5790 Mbits/sec  135             sender
+[  5]   0.00-1.09   sec   747 MBytes  5763 Mbits/sec                  receiver
+CPU Utilization: local/sender 22.9% (1.4%u/21.4%s), remote/receiver 0.0% (0.0%u/0.0%s)
+
+iperf Done.

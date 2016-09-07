@@ -1,0 +1,32 @@
+iperf 3.1.3
+Linux host117 3.16.0-4-amd64 #1 SMP Debian 3.16.7-ckt11-1+deb8u4 (2015-09-19) x86_64
+Time: Wed, 07 Sep 2016 03:00:00 GMT
+Connecting to host 192.168.110.13, port 5005
+      Cookie: host117.1473217200.761858.5772c42f40
+      TCP MSS: 1448 (default)
+[  5] local 192.168.110.17 port 52360 connected to 192.168.110.13 port 5005
+Starting Test: protocol: TCP, 1 streams, 131072 byte blocks, omitting 0 seconds, 786432000 bytes to send
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  5]   0.00-0.50   sec  36.1 MBytes   606 Mbits/sec   19    428 KBytes       
+[  5]   0.50-1.00   sec  38.8 MBytes   652 Mbits/sec    0    462 KBytes       
+[  5]   1.00-1.50   sec  41.4 MBytes   694 Mbits/sec    0    491 KBytes       
+[  5]   1.50-2.00   sec  40.4 MBytes   678 Mbits/sec    0    513 KBytes       
+[  5]   2.00-2.50   sec  44.7 MBytes   751 Mbits/sec    0    533 KBytes       
+[  5]   2.50-3.00   sec  47.1 MBytes   790 Mbits/sec    0    550 KBytes       
+[  5]   3.00-3.50   sec  58.2 MBytes   977 Mbits/sec    0    561 KBytes       
+[  5]   3.50-4.00   sec  58.8 MBytes   988 Mbits/sec    0    570 KBytes       
+[  5]   4.00-4.50   sec  61.0 MBytes  1022 Mbits/sec    0    577 KBytes       
+[  5]   4.50-5.00   sec  60.6 MBytes  1017 Mbits/sec    0    581 KBytes       
+[  5]   5.00-5.50   sec  55.2 MBytes   926 Mbits/sec    0    584 KBytes       
+[  5]   5.50-6.00   sec  53.6 MBytes   900 Mbits/sec    0    585 KBytes       
+[  5]   6.00-6.50   sec  55.1 MBytes   925 Mbits/sec    0    587 KBytes       
+[  5]   6.50-7.00   sec  54.1 MBytes   908 Mbits/sec    0    588 KBytes       
+[  5]   7.00-7.40   sec  45.0 MBytes   945 Mbits/sec    0    590 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Test Complete. Summary Results:
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  5]   0.00-7.40   sec   750 MBytes   851 Mbits/sec   19             sender
+[  5]   0.00-7.40   sec   747 MBytes   847 Mbits/sec                  receiver
+CPU Utilization: local/sender 3.2% (0.1%u/3.1%s), remote/receiver 0.1% (0.0%u/0.0%s)
+
+iperf Done.

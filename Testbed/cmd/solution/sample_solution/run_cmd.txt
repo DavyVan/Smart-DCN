@@ -24,20 +24,20 @@ iperf3 -p 5013 -s -D -I ~/pid_13.txt
 iperf3 -p 5014 -s -D -I ~/pid_14.txt
 
 // client side
-iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.14 -V -n 50G -S 0 --logfile ~/result-0-1.txt
-iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.15 -V -n 83G -S 1 --logfile ~/result-0-2-tos-1.txt
-iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.15 -V -n 83G -S 2 --logfile ~/result-0-2-tos-2.txt
-iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.15 -V -n 83G -S 3 --logfile ~/result-0-2-tos-3.txt
-iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.17 -V -n 50G -S 1 --logfile ~/result-0-4-tos-1.txt
-iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.17 -V -n 50G -S 2 --logfile ~/result-0-4-tos-2.txt
-iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.5 -V -n 100G -S 1 --logfile ~/result-0-5-tos-1.txt
-iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.5 -V -n 100G -S 2 --logfile ~/result-0-5-tos-2.txt
-iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.6 -V -n 50G -S 1 --logfile ~/result-0-6-tos-1.txt
-iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.6 -V -n 50G -S 2 --logfile ~/result-0-6-tos-2.txt
-iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.7 -V -n 83G -S 1 --logfile ~/result-0-8-tos-1.txt
-iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.7 -V -n 83G -S 2 --logfile ~/result-0-8-tos-2.txt
-iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.7 -V -n 83G -S 3 --logfile ~/result-0-8-tos-3.txt
-iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.8 -V -n 50G -S 0 --logfile ~/result-0-9.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.14 -V -n 750M -S 0 --logfile ~/result-0-1.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.15 -V -n 1250M -S 1 --logfile ~/result-0-2-tos-1.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.15 -V -n 1250M -S 2 --logfile ~/result-0-2-tos-2.txt
+iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.15 -V -n 1250M -S 3 --logfile ~/result-0-2-tos-3.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.17 -V -n 750M -S 1 --logfile ~/result-0-4-tos-1.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.17 -V -n 750M -S 2 --logfile ~/result-0-4-tos-2.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.5 -V -n 1500M -S 1 --logfile ~/result-0-5-tos-1.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.5 -V -n 1500M -S 2 --logfile ~/result-0-5-tos-2.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.6 -V -n 750M -S 1 --logfile ~/result-0-6-tos-1.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.6 -V -n 750M -S 2 --logfile ~/result-0-6-tos-2.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.7 -V -n 1250M -S 1 --logfile ~/result-0-8-tos-1.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.7 -V -n 1250M -S 2 --logfile ~/result-0-8-tos-2.txt
+iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.7 -V -n 1250M -S 3 --logfile ~/result-0-8-tos-3.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.8 -V -n 750M -S 0 --logfile ~/result-0-9.txt
 
 
 //// On server 1 (sing114)
@@ -46,8 +46,8 @@ iperf3 -p 5001 -s -D -I ~/pid_1.txt
 iperf3 -p 5002 -s -D -I ~/pid_2.txt
 
 // client side
-iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.13 -V -n 50G -S 0 --logfile ~/result-1-0.txt
-iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.15 -V -n 50G -S 0 --logfile ~/result-1-2.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.13 -V -n 750M -S 0 --logfile ~/result-1-0.txt
+iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.15 -V -n 750M -S 0 --logfile ~/result-1-2.txt
 
 
 //// On server 2 (sing115)
@@ -59,11 +59,11 @@ iperf3 -p 5004 -s -D -I ~/pid_4.txt
 iperf3 -p 5005 -s -D -I ~/pid_5.txt
 
 // client side
-iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.13 -V -n 83G -S 1 --logfile ~/result-2-0-tos-1.txt
-iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.13 -V -n 83G -S 2 --logfile ~/result-2-0-tos-2.txt
-iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.13 -V -n 83G -S 3 --logfile ~/result-2-0-tos-3.txt
-iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.14 -V -n 50G -S 0 --logfile ~/result-2-1.txt
-iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.16 -V -n 50G -S 0 --logfile ~/result-2-3.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.13 -V -n 1250M -S 1 --logfile ~/result-2-0-tos-1.txt
+iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.13 -V -n 1250M -S 2 --logfile ~/result-2-0-tos-2.txt
+iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.13 -V -n 1250M -S 3 --logfile ~/result-2-0-tos-3.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.14 -V -n 750M -S 0 --logfile ~/result-2-1.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.16 -V -n 750M -S 0 --logfile ~/result-2-3.txt
 
 
 //// On server 3 (sing116)
@@ -72,8 +72,8 @@ iperf3 -p 5001 -s -D -I ~/pid_1.txt
 iperf3 -p 5002 -s -D -I ~/pid_2.txt
 
 // client side
-iperf3 -p 5005 -f m -i 0.5 -c 192.168.110.15 -V -n 50G -S 0 --logfile ~/result-3-2.txt
-iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.17 -V -n 50G -S 0 --logfile ~/result-3-4.txt
+iperf3 -p 5005 -f m -i 0.5 -c 192.168.110.15 -V -n 750M -S 0 --logfile ~/result-3-2.txt
+iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.17 -V -n 750M -S 0 --logfile ~/result-3-4.txt
 
 
 //// On server 4 (sing117)
@@ -84,10 +84,10 @@ iperf3 -p 5003 -s -D -I ~/pid_3.txt
 iperf3 -p 5004 -s -D -I ~/pid_4.txt
 
 // client side
-iperf3 -p 5005 -f m -i 0.5 -c 192.168.110.13 -V -n 50G -S 1 --logfile ~/result-4-0-tos-1.txt
-iperf3 -p 5006 -f m -i 0.5 -c 192.168.110.13 -V -n 50G -S 2 --logfile ~/result-4-0-tos-2.txt
-iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.16 -V -n 50G -S 0 --logfile ~/result-4-3.txt
-iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.5 -V -n 50G -S 0 --logfile ~/result-4-5.txt
+iperf3 -p 5005 -f m -i 0.5 -c 192.168.110.13 -V -n 750M -S 1 --logfile ~/result-4-0-tos-1.txt
+iperf3 -p 5006 -f m -i 0.5 -c 192.168.110.13 -V -n 750M -S 2 --logfile ~/result-4-0-tos-2.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.16 -V -n 750M -S 0 --logfile ~/result-4-3.txt
+iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.5 -V -n 750M -S 0 --logfile ~/result-4-5.txt
 
 
 //// On server 5 (sing105)
@@ -98,10 +98,10 @@ iperf3 -p 5003 -s -D -I ~/pid_3.txt
 iperf3 -p 5004 -s -D -I ~/pid_4.txt
 
 // client side
-iperf3 -p 5007 -f m -i 0.5 -c 192.168.110.13 -V -n 100G -S 1 --logfile ~/result-5-0-tos-1.txt
-iperf3 -p 5008 -f m -i 0.5 -c 192.168.110.13 -V -n 100G -S 2 --logfile ~/result-5-0-tos-2.txt
-iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.17 -V -n 50G -S 0 --logfile ~/result-5-4.txt
-iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.6 -V -n 50G -S 0 --logfile ~/result-5-6.txt
+iperf3 -p 5007 -f m -i 0.5 -c 192.168.110.13 -V -n 1500M -S 1 --logfile ~/result-5-0-tos-1.txt
+iperf3 -p 5008 -f m -i 0.5 -c 192.168.110.13 -V -n 1500M -S 2 --logfile ~/result-5-0-tos-2.txt
+iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.17 -V -n 750M -S 0 --logfile ~/result-5-4.txt
+iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.6 -V -n 750M -S 0 --logfile ~/result-5-6.txt
 
 
 //// On server 6 (sing106)
@@ -112,10 +112,10 @@ iperf3 -p 5003 -s -D -I ~/pid_3.txt
 iperf3 -p 5004 -s -D -I ~/pid_4.txt
 
 // client side
-iperf3 -p 5009 -f m -i 0.5 -c 192.168.110.13 -V -n 50G -S 1 --logfile ~/result-6-0-tos-1.txt
-iperf3 -p 5010 -f m -i 0.5 -c 192.168.110.13 -V -n 50G -S 2 --logfile ~/result-6-0-tos-2.txt
-iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.5 -V -n 50G -S 0 --logfile ~/result-6-5.txt
-iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.3 -V -n 50G -S 0 --logfile ~/result-6-7.txt
+iperf3 -p 5009 -f m -i 0.5 -c 192.168.110.13 -V -n 750M -S 1 --logfile ~/result-6-0-tos-1.txt
+iperf3 -p 5010 -f m -i 0.5 -c 192.168.110.13 -V -n 750M -S 2 --logfile ~/result-6-0-tos-2.txt
+iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.5 -V -n 750M -S 0 --logfile ~/result-6-5.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.3 -V -n 750M -S 0 --logfile ~/result-6-7.txt
 
 
 //// On server 7 (sing103)
@@ -124,8 +124,8 @@ iperf3 -p 5001 -s -D -I ~/pid_1.txt
 iperf3 -p 5002 -s -D -I ~/pid_2.txt
 
 // client side
-iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.6 -V -n 50G -S 0 --logfile ~/result-7-6.txt
-iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.7 -V -n 50G -S 0 --logfile ~/result-7-8.txt
+iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.6 -V -n 750M -S 0 --logfile ~/result-7-6.txt
+iperf3 -p 5004 -f m -i 0.5 -c 192.168.110.7 -V -n 750M -S 0 --logfile ~/result-7-8.txt
 
 
 //// On server 8 (sing107)
@@ -137,11 +137,11 @@ iperf3 -p 5004 -s -D -I ~/pid_4.txt
 iperf3 -p 5005 -s -D -I ~/pid_5.txt
 
 // client side
-iperf3 -p 5011 -f m -i 0.5 -c 192.168.110.13 -V -n 83G -S 1 --logfile ~/result-8-0-tos-1.txt
-iperf3 -p 5012 -f m -i 0.5 -c 192.168.110.13 -V -n 83G -S 2 --logfile ~/result-8-0-tos-2.txt
-iperf3 -p 5013 -f m -i 0.5 -c 192.168.110.13 -V -n 83G -S 3 --logfile ~/result-8-0-tos-3.txt
-iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.3 -V -n 50G -S 0 --logfile ~/result-8-7.txt
-iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.8 -V -n 50G -S 0 --logfile ~/result-8-9.txt
+iperf3 -p 5011 -f m -i 0.5 -c 192.168.110.13 -V -n 1250M -S 1 --logfile ~/result-8-0-tos-1.txt
+iperf3 -p 5012 -f m -i 0.5 -c 192.168.110.13 -V -n 1250M -S 2 --logfile ~/result-8-0-tos-2.txt
+iperf3 -p 5013 -f m -i 0.5 -c 192.168.110.13 -V -n 1250M -S 3 --logfile ~/result-8-0-tos-3.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.3 -V -n 750M -S 0 --logfile ~/result-8-7.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.8 -V -n 750M -S 0 --logfile ~/result-8-9.txt
 
 
 //// On server 9 (sing108)
@@ -150,5 +150,5 @@ iperf3 -p 5001 -s -D -I ~/pid_1.txt
 iperf3 -p 5002 -s -D -I ~/pid_2.txt
 
 // client side
-iperf3 -p 5014 -f m -i 0.5 -c 192.168.110.13 -V -n 50G -S 0 --logfile ~/result-9-0.txt
-iperf3 -p 5005 -f m -i 0.5 -c 192.168.110.7 -V -n 50G -S 0 --logfile ~/result-9-8.txt
+iperf3 -p 5014 -f m -i 0.5 -c 192.168.110.13 -V -n 750M -S 0 --logfile ~/result-9-0.txt
+iperf3 -p 5005 -f m -i 0.5 -c 192.168.110.7 -V -n 750M -S 0 --logfile ~/result-9-8.txt
