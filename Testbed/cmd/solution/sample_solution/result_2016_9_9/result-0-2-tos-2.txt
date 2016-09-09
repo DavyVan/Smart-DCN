@@ -1,0 +1,33 @@
+iperf 3.1.3
+Linux host113 3.16.0-4-amd64 #1 SMP Debian 3.16.7-ckt20-1+deb8u3 (2016-01-17) x86_64
+Time: Fri, 09 Sep 2016 11:55:00 GMT
+Connecting to host 192.168.110.15, port 5102
+      Cookie: host113.1473422100.948994.4330e0f90a
+      TCP MSS: 1448 (default)
+[  5] local 192.168.110.13 port 36985 connected to 192.168.110.15 port 5102
+Starting Test: protocol: TCP, 1 streams, 131072 byte blocks, omitting 0 seconds, 1310720000 bytes to send
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  5]   0.00-0.50   sec  60.5 MBytes  1012 Mbits/sec    0    850 KBytes       
+[  5]   0.50-1.00   sec  73.1 MBytes  1228 Mbits/sec    0    850 KBytes       
+[  5]   1.00-1.50   sec  73.7 MBytes  1235 Mbits/sec    0    850 KBytes       
+[  5]   1.50-2.00   sec  73.8 MBytes  1238 Mbits/sec    0    850 KBytes       
+[  5]   2.00-2.50   sec  80.0 MBytes  1342 Mbits/sec    0    850 KBytes       
+[  5]   2.50-3.00   sec  82.7 MBytes  1389 Mbits/sec    0    850 KBytes       
+[  5]   3.00-3.50   sec  83.1 MBytes  1393 Mbits/sec    0    850 KBytes       
+[  5]   3.50-4.00   sec  82.5 MBytes  1382 Mbits/sec    0    850 KBytes       
+[  5]   4.00-4.50   sec  82.5 MBytes  1385 Mbits/sec    0    850 KBytes       
+[  5]   4.50-5.00   sec  82.3 MBytes  1380 Mbits/sec    0    850 KBytes       
+[  5]   5.00-5.50   sec  81.6 MBytes  1372 Mbits/sec    0    850 KBytes       
+[  5]   5.50-6.00   sec  92.5 MBytes  1545 Mbits/sec    0    878 KBytes       
+[  5]   6.00-6.50   sec  94.0 MBytes  1585 Mbits/sec    0    878 KBytes       
+[  5]   6.50-7.00   sec  93.8 MBytes  1570 Mbits/sec    1    878 KBytes       
+[  5]   7.00-7.50   sec  93.8 MBytes  1571 Mbits/sec    0    878 KBytes       
+[  5]   7.50-7.61   sec  21.2 MBytes  1587 Mbits/sec    0    878 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Test Complete. Summary Results:
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  5]   0.00-7.61   sec  1.22 GBytes  1378 Mbits/sec    1             sender
+[  5]   0.00-7.61   sec  1.22 GBytes  1375 Mbits/sec                  receiver
+CPU Utilization: local/sender 6.2% (0.1%u/6.1%s), remote/receiver 0.1% (0.0%u/0.1%s)
+
+iperf Done.
