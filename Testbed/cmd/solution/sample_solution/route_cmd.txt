@@ -1,0 +1,213 @@
+templete:
+ovs-ofctl add-flow br in_port=,dl_type=0x0800,nw_src=192.168.110.,nw_dst=192.168.110.,actions=output:
+ovs-ofctl add-flow br in_port=,dl_type=0x0800,nw_src=192.168.110.,nw_dst=192.168.110.,nw_proto=6,tp_dst=,actions=output:
+ovs-ofctl add-flow br in_port=,dl_type=0x0800,nw_src=192.168.110.,nw_dst=192.168.110.,nw_proto=6,tp_src=,actions=output:
+
+
+DONE LINE 58
+
+Pica8-1 br0
+0-2-1:0-2
+ovs-ofctl add-flow br0 in_port=23,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.14,actions=output:34
+0-2
+ovs-ofctl add-flow br0 in_port=23,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.15,actions=output:34
+0-4
+ovs-ofctl add-flow br0 in_port=23,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.17,actions=output:36
+0-4-5:0-4
+ovs-ofctl add-flow br0 in_port=23,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.5,nw_proto=6,tp_dst=5101,actions=output:36
+ovs-ofctl add-flow br0 in_port=23,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.5,nw_proto=6,tp_src=5101,actions=output:36
+0-4-5:5-4-0:5-4
+ovs-ofctl add-flow br0 in_port=19,dl_type=0x0800,nw_src=192.168.110.5,nw_dst=192.168.110.13,nw_proto=6,tp_dst=5101,actions=output:40
+ovs-ofctl add-flow br0 in_port=19,dl_type=0x0800,nw_src=192.168.110.5,nw_dst=192.168.110.13,nw_proto=6,tp_src=5101,actions=output:40
+0-6-5:0-6
+ovs-ofctl add-flow br0 in_port=23,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.5,nw_proto=6,tp_dst=5102,actions=output:33
+ovs-ofctl add-flow br0 in_port=23,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.5,nw_proto=6,tp_src=5102,actions=output:33
+0-6-5:5-6-0:5-6
+ovs-ofctl add-flow br0 in_port=19,dl_type=0x0800,nw_src=192.168.110.5,nw_dst=192.168.110.13,nw_proto=6,tp_dst=5102,actions=output:37
+ovs-ofctl add-flow br0 in_port=19,dl_type=0x0800,nw_src=192.168.110.5,nw_dst=192.168.110.13,nw_proto=6,tp_src=5102,actions=output:37
+0-6
+ovs-ofctl add-flow br0 in_port=23,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.6,actions=output:33
+0-8
+ovs-ofctl add-flow br0 in_port=23,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.7,actions=output:35
+0-8-9:0-8
+ovs-ofctl add-flow br0 in_port=23,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.8,actions=output:35
+4-5:5-4
+ovs-ofctl add-flow br0 in_port=19,dl_type=0x0800,nw_src=192.168.110.5,nw_dst=192.168.110.17,actions=output:40
+5-6
+ovs-ofctl add-flow br0 in_port=19,dl_type=0x0800,nw_src=192.168.110.5,nw_dst=192.168.110.6,actions=output:37
+
+// receive
+ovs-ofctl add-flow br0 in_port=33,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:23
+ovs-ofctl add-flow br0 in_port=34,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:23
+ovs-ofctl add-flow br0 in_port=35,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:23
+ovs-ofctl add-flow br0 in_port=36,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:23
+ovs-ofctl add-flow br0 in_port=37,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:23
+ovs-ofctl add-flow br0 in_port=38,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:23
+ovs-ofctl add-flow br0 in_port=39,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:23
+ovs-ofctl add-flow br0 in_port=40,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:23
+
+ovs-ofctl add-flow br0 in_port=33,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:19
+ovs-ofctl add-flow br0 in_port=34,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:19
+ovs-ofctl add-flow br0 in_port=35,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:19
+ovs-ofctl add-flow br0 in_port=36,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:19
+ovs-ofctl add-flow br0 in_port=37,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:19
+ovs-ofctl add-flow br0 in_port=38,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:19
+ovs-ofctl add-flow br0 in_port=39,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:19
+ovs-ofctl add-flow br0 in_port=40,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:19
+
+
+Pica8-1 br1
+0-2-1:1-2-0:1-2
+ovs-ofctl add-flow br1 in_port=24,dl_type=0x0800,nw_src=192.168.110.14,nw_dst=192.168.110.13,actions=output:41
+0-6-5:6-5
+ovs-ofctl add-flow br1 in_port=41,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.5,nw_proto=6,tp_dst=5102,actions=output:48
+ovs-ofctl add-flow br1 in_port=41,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.5,nw_proto=6,tp_src=5102,actions=output:48
+0-6-5:5-6-0:6-0
+ovs-ofctl add-flow br1 in_port=45,dl_type=0x0800,nw_src=192.168.110.5,nw_dst=192.168.110.13,nw_proto=6,tp_dst=5102,actions=output:48
+ovs-ofctl add-flow br1 in_port=45,dl_type=0x0800,nw_src=192.168.110.5,nw_dst=192.168.110.13,nw_proto=6,tp_src=5102,actions=output:48
+0-6:6-0
+ovs-ofctl add-flow br1 in_port=20,dl_type=0x0800,nw_src=192.168.110.6,nw_dst=192.168.110.13,actions=output:48
+1-2
+ovs-ofctl add-flow br1 in_port=24,dl_type=0x0800,nw_src=192.168.110.14,nw_dst=192.168.110.15,actions=output:41
+2-1-3:1-3
+ovs-ofctl add-flow br1 in_port=44,dl_type=0x0800,nw_src=192.168.110.15,nw_dst=192.168.110.16,actions=output:42
+2-1-3:3-1-2:1-2
+ovs-ofctl add-flow br1 in_port=43,dl_type=0x0800,nw_src=192.168.110.16,nw_dst=192.168.110.15,actions=output:41
+5-6:6-5
+ovs-ofctl add-flow br1 in_port=20,dl_type=0x0800,nw_src=192.168.110.6,nw_dst=192.168.110.5,actions=output:48
+6-7
+ovs-ofctl add-flow br1 in_port=20,dl_type=0x0800,nw_src=192.168.110.6,nw_dst=192.168.110.3,actions=output:45
+
+// receive
+ovs-ofctl add-flow br1 in_port=41,dl_type=0x0800,nw_dst=192.168.110.14,actions=output:24
+ovs-ofctl add-flow br1 in_port=42,dl_type=0x0800,nw_dst=192.168.110.14,actions=output:24
+ovs-ofctl add-flow br1 in_port=43,dl_type=0x0800,nw_dst=192.168.110.14,actions=output:24
+ovs-ofctl add-flow br1 in_port=44,dl_type=0x0800,nw_dst=192.168.110.14,actions=output:24
+ovs-ofctl add-flow br1 in_port=45,dl_type=0x0800,nw_dst=192.168.110.14,actions=output:24
+ovs-ofctl add-flow br1 in_port=46,dl_type=0x0800,nw_dst=192.168.110.14,actions=output:24
+ovs-ofctl add-flow br1 in_port=47,dl_type=0x0800,nw_dst=192.168.110.14,actions=output:24
+ovs-ofctl add-flow br1 in_port=48,dl_type=0x0800,nw_dst=192.168.110.14,actions=output:24
+
+ovs-ofctl add-flow br1 in_port=41,dl_type=0x0800,nw_dst=192.168.110.6,actions=output:20
+ovs-ofctl add-flow br1 in_port=42,dl_type=0x0800,nw_dst=192.168.110.6,actions=output:20
+ovs-ofctl add-flow br1 in_port=43,dl_type=0x0800,nw_dst=192.168.110.6,actions=output:20
+ovs-ofctl add-flow br1 in_port=44,dl_type=0x0800,nw_dst=192.168.110.6,actions=output:20
+ovs-ofctl add-flow br1 in_port=45,dl_type=0x0800,nw_dst=192.168.110.6,actions=output:20
+ovs-ofctl add-flow br1 in_port=46,dl_type=0x0800,nw_dst=192.168.110.6,actions=output:20
+ovs-ofctl add-flow br1 in_port=47,dl_type=0x0800,nw_dst=192.168.110.6,actions=output:20
+ovs-ofctl add-flow br1 in_port=48,dl_type=0x0800,nw_dst=192.168.110.6,actions=output:20
+
+
+Pica8-2 br0
+0-2-1:2-1
+ovs-ofctl add-flow br0 in_port=26,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.14,actions=output:28
+0-2-1:1-2-0:2-0
+ovs-ofctl add-flow br0 in_port=25,dl_type=0x0800,nw_src=192.168.110.14,nw_dst=192.168.110.13,actions=output:27
+0-2:2-0
+ovs-ofctl add-flow br0 in_port=15,dl_type=0x0800,nw_src=192.168.110.15,nw_dst=192.168.110.13,actions=output:27
+1-2:2-1
+ovs-ofctl add-flow br0 in_port=15,dl_type=0x0800,nw_src=192.168.110.15,nw_dst=192.168.110.14,actions=output:28
+2-1-3:2-1
+ovs-ofctl add-flow br0 in_port=15,dl_type=0x0800,nw_src=192.168.110.15,nw_dst=192.168.110.16,actions=output:28
+6-7:7-6
+ovs-ofctl add-flow br0 in_port=5,dl_type=0x0800,nw_src=192.168.110.3,nw_dst=192.168.110.6,actions=output:32
+7-9-8:7-9
+ovs-ofctl add-flow br0 in_port=5,dl_type=0x0800,nw_src=192.168.110.3,nw_dst=192.168.110.7,actions=output:30
+
+// receive
+ovs-ofctl add-flow br0 in_port=25,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:15
+ovs-ofctl add-flow br0 in_port=26,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:15
+ovs-ofctl add-flow br0 in_port=27,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:15
+ovs-ofctl add-flow br0 in_port=28,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:15
+ovs-ofctl add-flow br0 in_port=29,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:15
+ovs-ofctl add-flow br0 in_port=30,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:15
+ovs-ofctl add-flow br0 in_port=31,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:15
+ovs-ofctl add-flow br0 in_port=32,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:15
+
+ovs-ofctl add-flow br0 in_port=25,dl_type=0x0800,nw_dst=192.168.110.3,actions=output:5
+ovs-ofctl add-flow br0 in_port=26,dl_type=0x0800,nw_dst=192.168.110.3,actions=output:5
+ovs-ofctl add-flow br0 in_port=27,dl_type=0x0800,nw_dst=192.168.110.3,actions=output:5
+ovs-ofctl add-flow br0 in_port=28,dl_type=0x0800,nw_dst=192.168.110.3,actions=output:5
+ovs-ofctl add-flow br0 in_port=29,dl_type=0x0800,nw_dst=192.168.110.3,actions=output:5
+ovs-ofctl add-flow br0 in_port=30,dl_type=0x0800,nw_dst=192.168.110.3,actions=output:5
+ovs-ofctl add-flow br0 in_port=31,dl_type=0x0800,nw_dst=192.168.110.3,actions=output:5
+ovs-ofctl add-flow br0 in_port=32,dl_type=0x0800,nw_dst=192.168.110.3,actions=output:5
+
+
+Pica8-2 br1
+0-8:8-0
+ovs-ofctl add-flow br1 in_port=6,dl_type=0x0800,nw_src=192.168.110.7,nw_dst=192.168.110.13,actions=output:38
+0-8-9:8-9
+ovs-ofctl add-flow br1 in_port=35,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.8,actions=output:37
+0-8-9:9-8-0:8-0
+ovs-ofctl add-flow br1 in_port=40,dl_type=0x0800,nw_src=192.168.110.8,nw_dst=192.168.110.13,actions=output:38
+2-1-3:3-1-2:3-1
+ovs-ofctl add-flow br1 in_port=16,dl_type=0x0800,nw_src=192.168.110.16,nw_dst=192.168.110.15,actions=output:35
+3-4
+ovs-ofctl add-flow br1 in_port=16,dl_type=0x0800,nw_src=192.168.110.16,nw_dst=192.168.110.17,actions=output:33
+7-9-8:8-9-7:8-9
+ovs-ofctl add-flow br1 in_port=6,dl_type=0x0800,nw_src=192.168.110.7,nw_dst=192.168.110.3,actions=output:37
+8-9
+ovs-ofctl add-flow br1 in_port=6,dl_type=0x0800,nw_src=192.168.110.7,nw_dst=192.168.110.8,actions=output:37
+
+// receive
+ovs-ofctl add-flow br1 in_port=33,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:16
+ovs-ofctl add-flow br1 in_port=34,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:16
+ovs-ofctl add-flow br1 in_port=35,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:16
+ovs-ofctl add-flow br1 in_port=36,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:16
+ovs-ofctl add-flow br1 in_port=37,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:16
+ovs-ofctl add-flow br1 in_port=38,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:16
+ovs-ofctl add-flow br1 in_port=39,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:16
+ovs-ofctl add-flow br1 in_port=40,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:16
+
+ovs-ofctl add-flow br1 in_port=33,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:6
+ovs-ofctl add-flow br1 in_port=34,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:6
+ovs-ofctl add-flow br1 in_port=35,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:6
+ovs-ofctl add-flow br1 in_port=36,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:6
+ovs-ofctl add-flow br1 in_port=37,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:6
+ovs-ofctl add-flow br1 in_port=38,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:6
+ovs-ofctl add-flow br1 in_port=39,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:6
+ovs-ofctl add-flow br1 in_port=40,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:6
+
+
+
+Pica8-2 br2
+0-4:4-0
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_src=192.168.110.17,nw_dst=192.168.110.13,actions=output:41
+0-4-5:4-5
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.5,nw_proto=6,tp_dst=5101,actions=output:41
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0800,nw_src=192.168.110.13,nw_dst=192.168.110.5,nw_proto=6,tp_src=5101,actions=output:41
+0-4-5:5-4-0:4-0
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0800,nw_src=192.168.110.5,nw_dst=192.168.110.13,nw_proto=6,tp_dst=5101,actions=output:41
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0800,nw_src=192.168.110.5,nw_dst=192.168.110.13,nw_proto=6,tp_src=5101,actions=output:41
+0-8-9:9-8-0:9-8
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0800,nw_src=192.168.110.8,nw_dst=192.168.110.13,actions=output:48
+3-4:4-3
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_src=192.168.110.17,nw_dst=192.168.110.16,actions=output:44
+4-5
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_src=192.168.110.17,nw_dst=192.168.110.5,actions=output:41
+7-9-8:9-8
+ovs-ofctl add-flow br2 in_port=46,dl_type=0x0800,nw_src=192.168.110.3,nw_dst=192.168.110.7,actions=output:48
+7-9-8:8-9-7:9-7
+ovs-ofctl add-flow br2 in_port=45,dl_type=0x0800,nw_src=192.168.110.7,nw_dst=192.168.110.3,actions=output:47
+8-9:9-8
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0800,nw_src=192.168.110.8,nw_dst=192.168.110.7,actions=output:48
+
+// receive
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+ovs-ofctl add-flow br2 in_port=42,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+ovs-ofctl add-flow br2 in_port=43,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+ovs-ofctl add-flow br2 in_port=45,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+ovs-ofctl add-flow br2 in_port=46,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+ovs-ofctl add-flow br2 in_port=47,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+ovs-ofctl add-flow br2 in_port=42,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+ovs-ofctl add-flow br2 in_port=43,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+ovs-ofctl add-flow br2 in_port=45,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+ovs-ofctl add-flow br2 in_port=46,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+ovs-ofctl add-flow br2 in_port=47,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
