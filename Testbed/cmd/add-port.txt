@@ -1,8 +1,8 @@
 Pica8-1
 Server-facing interface:
 ovs-vsctl add-port br0 te-1/1/23 -- set interface te-1/1/23 type=pica8
-ovs-vsctl add-port br1 te-1/1/24 -- set interface te-1/1/24 type=pica8
 ovs-vsctl add-port br0 te-1/1/19 -- set interface te-1/1/19 type=pica8
+ovs-vsctl add-port br1 te-1/1/24 -- set interface te-1/1/24 type=pica8
 ovs-vsctl add-port br1 te-1/1/20 -- set interface te-1/1/20 type=pica8
 OCS-facing interface:
 ovs-vsctl add-port br0 te-1/1/33 -- set interface te-1/1/33 type=pica8
@@ -24,10 +24,10 @@ ovs-vsctl add-port br1 te-1/1/48 -- set interface te-1/1/48 type=pica8
 Pica8-2
 Server-facing interface:
 ovs-vsctl add-port br0 te-1/1/15 -- set interface te-1/1/15 type=pica8
-ovs-vsctl add-port br1 te-1/1/16 -- set interface te-1/1/16 type=pica8
-ovs-vsctl add-port br2 te-1/1/17 -- set interface te-1/1/17 type=pica8
 ovs-vsctl add-port br0 te-1/1/5 -- set interface te-1/1/5 type=pica8
+ovs-vsctl add-port br1 te-1/1/16 -- set interface te-1/1/16 type=pica8
 ovs-vsctl add-port br1 te-1/1/6 -- set interface te-1/1/6 type=pica8
+ovs-vsctl add-port br2 te-1/1/17 -- set interface te-1/1/17 type=pica8
 ovs-vsctl add-port br2 te-1/1/7 -- set interface te-1/1/7 type=pica8
 OCS-facing interface:
 ovs-vsctl add-port br0 te-1/1/25 -- set interface te-1/1/25 type=pica8
