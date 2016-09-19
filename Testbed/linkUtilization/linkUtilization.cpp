@@ -1,4 +1,6 @@
 // 思路：对于每个边，计算所有经过该边的流的总流量，然后根据最大流完成时间计算出最大流量，其比例就是该条边的利用率，最后算平均即可
+// 修正思路：由于我们使用server发送数据，所以链路利用率受限于server的带宽，所以上述思路计算的链路利用率非常低，
+// 			我们应当以server端口为统计主体
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -26,7 +28,8 @@ struct route_rec
 route_rec records[1000];
 int rec_count = 0;
 double max_time = 0.0;
-double util_rate[10][10] = {0};
+double util_rate[20][20] = {0};
+// double util_rate_server[10] = {0};
 
 int main(int argc, char const *argv[]) {
     // read path file
@@ -52,8 +55,7 @@ int main(int argc, char const *argv[]) {
 		ssin.str(line);
 		while (ssin >> t)
 		{
-			if (t >= 10)
-				records[rec_count].hops[records[rec_count].hops_count++] = t % 10;
+			records[rec_count].hops[records[rec_count].hops_count++] = t;	// 这里需要统计所有链路所以不进行取模运算
 		}
 		rec_count++;
     }
@@ -71,6 +73,7 @@ int main(int argc, char const *argv[]) {
             max_time = t;
     }
 	fin.close();
+	cout << "max_time: " << max_time << endl;
 
     // 针对每个路由记录，遍历其经过的边，统计流量
     // 只统计单向，反向以ACK报文为主，忽略不计
@@ -82,16 +85,16 @@ int main(int argc, char const *argv[]) {
 
     // 计算比率
     double max_throughput = max_time * 9414;        // Mbps
-    for(int i = 0; i < 10; i++)
-        for(int j = 0; j < 10; j++)
+    for(int i = 0; i < 20; i++)
+        for(int j = 0; j < 20; j++)
             util_rate[i][j] = util_rate[i][j] * RATE_MULTIPLIER * 8 / max_throughput;
 
     // 输出到文件，输出成可以直接粘贴到matlab中的矩阵格式
     ofstream fout(OUTPUT_FILE_NAME);
-    fout << "[" << endl;
-    for(int i = 0; i < 10; i++)
+    fout << "[";
+    for(int i = 0; i < 20; i++)
     {
-        for(int j = 0; j < 10; j++)
+        for(int j = 0; j < 20; j++)
             fout << util_rate[i][j] << " ";
         fout << endl;
     }
