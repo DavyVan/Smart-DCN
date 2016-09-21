@@ -1,0 +1,5 @@
+iperf3 -p 5005 -f m -i 0 -J -c 192.168.110.13 -V -n 13845M --logfile ~/result-8-0-5005.txt
+iperf3 -p 5006 -f m -i 0 -J -c 192.168.110.14 -V -n 11715M --logfile ~/result-8-1-5006.txt
+iperf3 -p 5007 -f m -i 0 -J -c 192.168.110.16 -V -n 10530M --logfile ~/result-8-3-5007.txt
+iperf3 -p 5003 -f m -i 0 -J -c 192.168.110.17 -V -n 11625M --logfile ~/result-8-4-5003.txt
+iperf3 -p 5006 -f m -i 0 -J -c 192.168.110.8 -V -n 10830M --logfile ~/result-8-9-5006.txt
