@@ -1,0 +1,9 @@
+iperf3 -p 5004 -f m -i 0 -J -c 192.168.110.14 -V -n 10905M --logfile ~/result-6-1-5004.txt
+iperf3 -p 5501 -f m -i 0 -J -c 192.168.110.15 -V -n 5700M --logfile ~/result-6-2-5501.txt
+iperf3 -p 5502 -f m -i 0 -J -c 192.168.110.15 -V -n 5700M --logfile ~/result-6-2-5502.txt
+iperf3 -p 5601 -f m -i 0 -J -c 192.168.110.16 -V -n 2700M --logfile ~/result-6-3-5601.txt
+iperf3 -p 5602 -f m -i 0 -J -c 192.168.110.16 -V -n 2700M --logfile ~/result-6-3-5602.txt
+iperf3 -p 5603 -f m -i 0 -J -c 192.168.110.16 -V -n 2700M --logfile ~/result-6-3-5603.txt
+iperf3 -p 5003 -f m -i 0 -J -c 192.168.110.5 -V -n 7560M --logfile ~/result-6-5-5003.txt
+iperf3 -p 5701 -f m -i 0 -J -c 192.168.110.8 -V -n 6083M --logfile ~/result-6-9-5701.txt
+iperf3 -p 5702 -f m -i 0 -J -c 192.168.110.8 -V -n 6083M --logfile ~/result-6-9-5702.txt

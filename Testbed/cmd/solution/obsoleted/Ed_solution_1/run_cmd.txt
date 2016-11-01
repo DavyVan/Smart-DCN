@@ -1,0 +1,163 @@
+[obsoleted!!!]
+server:
+/home/quan/TrafficGenerator/bin/server -p 5001 -d
+client:
+/home/quan/TrafficGenerator/bin/client -b 10000 -c /home/quan/TrafficGenerator/conf/client_config_.txt -n 1 -l /home/quan/flows_.txt
+[obsoleted above!!!]
+
+// Use iperf3
+Server:     // Works in daemon mode, multi-instant
+iperf3 -p 500 -s -D -I ~/pid_.txt
+Client:
+iperf3 -p 500 -f m -i 0.5 -c 192.168.110. -V -n 10240 -l 1M --logfile ~/result-.txt
+// -n 512000 for 50 * 10G
+// -n 2560000 for 250 * 10G
+// -n 1024000 for 100 * 10G
+// -n 341333 for 33.3333 * 10G
+
+
+//// Use at
+// Server side
+at 14:00
+// Client side
+at 14:05
+
+
+//// On server 0 (sing113)
+// server side
+iperf3 -p 5001 -s -D -I ~/pid_1.txt
+iperf3 -p 5002 -s -D -I ~/pid_2.txt
+iperf3 -p 5003 -s -D -I ~/pid_3.txt
+iperf3 -p 5104 -s -D -I ~/pid_4.txt
+iperf3 -p 5101 -s -D -I ~/pid_5.txt
+iperf3 -p 5105 -s -D -I ~/pid_6.txt
+iperf3 -p 5103 -s -D -I ~/pid_7.txt
+iperf3 -p 5106 -s -D -I ~/pid_8.txt
+iperf3 -p 5102 -s -D -I ~/pid_9.txt
+iperf3 -p 5010 -s -D -I ~/pid_10.txt
+iperf3 -p 5011 -s -D -I ~/pid_11.txt
+iperf3 -p 5012 -s -D -I ~/pid_12.txt
+
+//client side
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.14 -V -n 750M --logfile ~/result-0-1.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.15 -V -n 3750M --logfile ~/result-0-2.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.17 -V -n 1500M --logfile ~/result-0-4.txt
+iperf3 -p 5101 -f m -i 0.5 -c 192.168.110.5 -V -n 500M --logfile ~/result-0-5-tos-1.txt
+iperf3 -p 5102 -f m -i 0.5 -c 192.168.110.5 -V -n 500M --logfile ~/result-0-5-tos-2.txt
+iperf3 -p 5103 -f m -i 0.5 -c 192.168.110.5 -V -n 500M --logfile ~/result-0-5-tos-3.txt
+iperf3 -p 5104 -f m -i 0.5 -c 192.168.110.5 -V -n 500M --logfile ~/result-0-5-tos-4.txt
+iperf3 -p 5105 -f m -i 0.5 -c 192.168.110.5 -V -n 500M --logfile ~/result-0-5-tos-5.txt
+iperf3 -p 5106 -f m -i 0.5 -c 192.168.110.5 -V -n 500M --logfile ~/result-0-5-tos-6.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.6 -V -n 1500M --logfile ~/result-0-6.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.7 -V -n 3750M --logfile ~/result-0-8.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.8 -V -n 750M --logfile ~/result-0-9.txt
+
+
+//// On server 1 (sing114)
+// server side
+iperf3 -p 5001 -s -D -I ~/pid_1.txt
+iperf3 -p 5002 -s -D -I ~/pid_2.txt
+
+// client side
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.13 -V -n 750M --logfile ~/result-1-0.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.15 -V -n 750M --logfile ~/result-1-2.txt
+
+
+//// On server 2 (sing115)
+// server side
+iperf3 -p 5001 -s -D -I ~/pid_1.txt
+iperf3 -p 5002 -s -D -I ~/pid_2.txt
+iperf3 -p 5003 -s -D -I ~/pid_3.txt
+
+// client side
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.13 -V -n 3750M --logfile ~/result-2-0.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.14 -V -n 750M --logfile ~/result-2-1.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.16 -V -n 750M --logfile ~/result-2-3.txt
+
+
+//// On server 3 (sing116)
+// server side
+iperf3 -p 5001 -s -D -I ~/pid_1.txt
+iperf3 -p 5002 -s -D -I ~/pid_2.txt
+
+// client side
+iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.15 -V -n 750M --logfile ~/result-3-2.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.17 -V -n 750M --logfile ~/result-3-4.txt
+
+
+//// On server 4 (sing117)
+// server side
+iperf3 -p 5001 -s -D -I ~/pid_1.txt
+iperf3 -p 5002 -s -D -I ~/pid_2.txt
+iperf3 -p 5003 -s -D -I ~/pid_3.txt
+
+// client side
+iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.13 -V -n 1500M --logfile ~/result-4-0.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.16 -V -n 750M --logfile ~/result-4-3.txt
+iperf3 -p 5007 -f m -i 0.5 -c 192.168.110.5 -V -n 750M --logfile ~/result-4-5.txt
+
+
+//// On server 5 (sing105)
+// server side
+iperf3 -p 5101 -s -D -I ~/pid_1.txt
+iperf3 -p 5102 -s -D -I ~/pid_2.txt
+iperf3 -p 5103 -s -D -I ~/pid_3.txt
+iperf3 -p 5104 -s -D -I ~/pid_4.txt
+iperf3 -p 5105 -s -D -I ~/pid_5.txt
+iperf3 -p 5106 -s -D -I ~/pid_6.txt
+iperf3 -p 5007 -s -D -I ~/pid_7.txt
+iperf3 -p 5008 -s -D -I ~/pid_8.txt
+
+// client side
+iperf3 -p 5104 -f m -i 0.5 -c 192.168.110.13 -V -n 500M --logfile ~/result-5-0-tos-4.txt
+iperf3 -p 5101 -f m -i 0.5 -c 192.168.110.13 -V -n 500M --logfile ~/result-5-0-tos-1.txt
+iperf3 -p 5105 -f m -i 0.5 -c 192.168.110.13 -V -n 500M --logfile ~/result-5-0-tos-5.txt
+iperf3 -p 5103 -f m -i 0.5 -c 192.168.110.13 -V -n 500M --logfile ~/result-5-0-tos-3.txt
+iperf3 -p 5106 -f m -i 0.5 -c 192.168.110.13 -V -n 500M --logfile ~/result-5-0-tos-6.txt
+iperf3 -p 5102 -f m -i 0.5 -c 192.168.110.13 -V -n 500M --logfile ~/result-5-0-tos-2.txt
+iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.17 -V -n 750M --logfile ~/result-5-4.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.6 -V -n 750M --logfile ~/result-5-6.txt
+
+
+//// On server 6 (sing106)
+// server side
+iperf3 -p 5001 -s -D -I ~/pid_1.txt
+iperf3 -p 5002 -s -D -I ~/pid_2.txt
+iperf3 -p 5003 -s -D -I ~/pid_3.txt
+
+// client side
+iperf3 -p 5010 -f m -i 0.5 -c 192.168.110.13 -V -n 1500M --logfile ~/result-6-0.txt
+iperf3 -p 5008 -f m -i 0.5 -c 192.168.110.5 -V -n 750M --logfile ~/result-6-5.txt
+iperf3 -p 5001 -f m -i 0.5 -c 192.168.110.3 -V -n 750M --logfile ~/result-6-7.txt
+
+
+//// On server 7 (sing103)
+// server side
+iperf3 -p 5001 -s -D -I ~/pid_1.txt
+iperf3 -p 5002 -s -D -I ~/pid_2.txt
+
+// client side
+iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.6 -V -n 750M --logfile ~/result-7-6.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.7 -V -n 750M --logfile ~/result-7-8.txt
+
+
+//// On server 8 (sing107)
+// server side
+iperf3 -p 5001 -s -D -I ~/pid_1.txt
+iperf3 -p 5002 -s -D -I ~/pid_2.txt
+iperf3 -p 5003 -s -D -I ~/pid_3.txt
+
+// client side
+iperf3 -p 5011 -f m -i 0.5 -c 192.168.110.13 -V -n 3750M --logfile ~/result-8-0.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.3 -V -n 750M --logfile ~/result-8-7.txt
+iperf3 -p 5002 -f m -i 0.5 -c 192.168.110.8 -V -n 750M --logfile ~/result-8-9.txt
+
+
+//// On server 9 (sing108)
+// server side
+iperf3 -p 5001 -s -D -I ~/pid_1.txt
+iperf3 -p 5002 -s -D -I ~/pid_2.txt
+
+// client side
+iperf3 -p 5012 -f m -i 0.5 -c 192.168.110.13 -V -n 750M --logfile ~/result-9-0.txt
+iperf3 -p 5003 -f m -i 0.5 -c 192.168.110.7 -V -n 750M --logfile ~/result-9-8.txt

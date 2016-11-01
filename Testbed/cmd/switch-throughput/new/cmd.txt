@@ -1,0 +1,41 @@
+// Add ports, only for pica8-1 br1 & pica8-2 br0
+// Pica8-1 br1
+ovs-vsctl add-port br1 te-1/1/41 -- set interface te-1/1/41 type=pica8
+ovs-vsctl add-port br1 te-1/1/42 -- set interface te-1/1/42 type=pica8 options:link_speed=1G
+ovs-vsctl add-port br1 te-1/1/43 -- set interface te-1/1/43 type=pica8 options:link_speed=1G
+ovs-vsctl add-port br1 te-1/1/44 -- set interface te-1/1/44 type=pica8
+ovs-vsctl add-port br1 te-1/1/45 -- set interface te-1/1/45 type=pica8
+ovs-vsctl add-port br1 te-1/1/46 -- set interface te-1/1/46 type=pica8
+ovs-vsctl add-port br1 te-1/1/47 -- set interface te-1/1/47 type=pica8
+ovs-vsctl add-port br1 te-1/1/48 -- set interface te-1/1/48 type=pica8
+
+// Pica8-2 br0
+
+
+
+
+Pica8-1 br1
+ovs-ofctl add-flow br1 in_port=42,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:43
+
+Pica8-2 br0
+ovs-ofctl add-flow br0 in_port=15,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:25,26,28
+ovs-ofctl add-flow br0 in_port=25,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:15
+
+Pica8-2 br1
+ovs-ofctl add-flow br1 in_port=36,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:16
+ovs-ofctl add-flow br1 in_port=35,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:16
+ovs-ofctl add-flow br1 in_port=16,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:33
+
+Pica8-2 br2
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:44
+
+/** obsoleted!!
+测试的时候使用ping命令的flood模式(需要权限)：
+sudo ping -f -i 0.001 -w 0.001 192.168.110.16
+
+这样丢包的数量大概就是网络中断的时间的十分之一（毫秒）
+**/
+
+// New measurement!!
+sudo fping -l -s -Q 1 -p 1 -i 1 192.168.110.16
+这样丢包的数量才能看做毫秒为单位的时间

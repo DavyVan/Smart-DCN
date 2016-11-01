@@ -1,0 +1,11 @@
+iperf3 -p 5101 -s -D -I ~/pid_5101.txt
+iperf3 -p 5102 -s -D -I ~/pid_5102.txt
+iperf3 -p 5103 -s -D -I ~/pid_5103.txt
+iperf3 -p 5001 -s -D -I ~/pid_5001.txt
+iperf3 -p 5002 -s -D -I ~/pid_5002.txt
+iperf3 -p 5003 -s -D -I ~/pid_5003.txt
+iperf3 -p 5601 -s -D -I ~/pid_5601.txt
+iperf3 -p 5602 -s -D -I ~/pid_5602.txt
+iperf3 -p 5603 -s -D -I ~/pid_5603.txt
+iperf3 -p 5004 -s -D -I ~/pid_5004.txt
+iperf3 -p 5005 -s -D -I ~/pid_5005.txt

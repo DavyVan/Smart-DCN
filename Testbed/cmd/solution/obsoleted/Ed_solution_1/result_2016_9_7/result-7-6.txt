@@ -1,0 +1,22 @@
+iperf 3.1.3
+Linux host103 3.18.19 #1 SMP Mon Aug 3 18:17:47 HKT 2015 x86_64
+Time: Wed, 07 Sep 2016 06:30:00 GMT
+Connecting to host 192.168.110.6, port 5003
+      Cookie: host103.1473229800.244716.6016c5d559
+      TCP MSS: 1448 (default)
+[  5] local 192.168.110.3 port 49037 connected to 192.168.110.6 port 5003
+Starting Test: protocol: TCP, 1 streams, 131072 byte blocks, omitting 0 seconds, 786432000 bytes to send
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  5]   0.00-0.50   sec   290 MBytes  4871 Mbits/sec    0   1.84 MBytes       
+[  5]   0.50-1.00   sec   223 MBytes  3735 Mbits/sec  411   1.49 MBytes       
+[  5]   1.00-1.50   sec  74.0 MBytes  1242 Mbits/sec  452   1.97 MBytes       
+[  5]   1.50-2.00   sec   137 MBytes  2306 Mbits/sec  512    909 KBytes       
+[  5]   2.00-2.03   sec  26.2 MBytes  7935 Mbits/sec    0    913 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Test Complete. Summary Results:
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  5]   0.00-2.03   sec   751 MBytes  3106 Mbits/sec  1375             sender
+[  5]   0.00-2.03   sec   748 MBytes  3094 Mbits/sec                  receiver
+CPU Utilization: local/sender 7.1% (0.2%u/6.8%s), remote/receiver 0.0% (0.0%u/0.0%s)
+
+iperf Done.

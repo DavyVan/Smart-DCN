@@ -1,0 +1,102 @@
+////// Pica8-2 br2
+//// For sing117 sending
+// ARP
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0806,nw_dst=192.168.110.8,actions=output:7
+
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0806,nw_dst=192.168.110.13,actions=output:41
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0806,nw_dst=192.168.110.14,actions=output:41
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0806,nw_dst=192.168.110.15,actions=output:44
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0806,nw_dst=192.168.110.16,actions=output:44
+
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0806,nw_dst=192.168.110.5,actions=output:41
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0806,nw_dst=192.168.110.6,actions=output:41
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0806,nw_dst=192.168.110.3,actions=output:44
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0806,nw_dst=192.168.110.7,actions=output:44
+// IP
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:41
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_dst=192.168.110.14,actions=output:41
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:44
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:44
+
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:41
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_dst=192.168.110.6,actions=output:41
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_dst=192.168.110.3,actions=output:44
+ovs-ofctl add-flow br2 in_port=17,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:44
+
+//// For sing117 receiving
+// ARP
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0806,nw_dst=192.168.110.17,actions=output:17
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0806,nw_dst=192.168.110.17,actions=output:17
+
+ovs-ofctl add-flow br2 in_port=45,dl_type=0x0806,nw_dst=192.168.110.17,actions=output:17
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0806,nw_dst=192.168.110.17,actions=output:17
+// IP
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+
+ovs-ofctl add-flow br2 in_port=45,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+
+//// For sing108 sending
+// ARP
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0806,nw_dst=192.168.110.17,actions=output:17
+
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0806,nw_dst=192.168.110.13,actions=output:45
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0806,nw_dst=192.168.110.14,actions=output:45
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0806,nw_dst=192.168.110.15,actions=output:48
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0806,nw_dst=192.168.110.16,actions=output:48
+
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0806,nw_dst=192.168.110.5,actions=output:45
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0806,nw_dst=192.168.110.6,actions=output:45
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0806,nw_dst=192.168.110.3,actions=output:48
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0806,nw_dst=192.168.110.7,actions=output:48
+// IP
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0800,nw_dst=192.168.110.17,actions=output:17
+
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:45
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0800,nw_dst=192.168.110.14,actions=output:45
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0800,nw_dst=192.168.110.15,actions=output:48
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:48
+
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:45
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0800,nw_dst=192.168.110.6,actions=output:45
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0800,nw_dst=192.168.110.3,actions=output:48
+ovs-ofctl add-flow br2 in_port=7,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:48
+
+//// For sing108 receiving
+// ARP
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0806,nw_dst=192.168.110.8,actions=output:7
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0806,nw_dst=192.168.110.8,actions=output:7
+
+ovs-ofctl add-flow br2 in_port=45,dl_type=0x0806,nw_dst=192.168.110.8,actions=output:7
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0806,nw_dst=192.168.110.8,actions=output:7
+// IP
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+
+ovs-ofctl add-flow br2 in_port=45,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0800,nw_dst=192.168.110.8,actions=output:7
+
+//// For relay
+// ARP
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0806,nw_dst=192.168.110.13,actions=output:17
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0806,nw_dst=192.168.110.5,actions=output:17
+ovs-ofctl add-flow br2 in_port=45,dl_type=0x0806,nw_dst=192.168.110.13,actions=output:17
+ovs-ofctl add-flow br2 in_port=45,dl_type=0x0806,nw_dst=192.168.110.5,actions=output:17
+
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0806,nw_dst=192.168.110.16,actions=output:17
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0806,nw_dst=192.168.110.7,actions=output:17
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0806,nw_dst=192.168.110.16,actions=output:17
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0806,nw_dst=192.168.110.7,actions=output:17
+// IP
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:17
+ovs-ofctl add-flow br2 in_port=41,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:17
+ovs-ofctl add-flow br2 in_port=45,dl_type=0x0800,nw_dst=192.168.110.13,actions=output:17
+ovs-ofctl add-flow br2 in_port=45,dl_type=0x0800,nw_dst=192.168.110.5,actions=output:17
+
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:17
+ovs-ofctl add-flow br2 in_port=44,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:17
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0800,nw_dst=192.168.110.16,actions=output:17
+ovs-ofctl add-flow br2 in_port=48,dl_type=0x0800,nw_dst=192.168.110.7,actions=output:17

@@ -1,0 +1,4 @@
+server 192.168.110. 5001
+req_size_dist /home/quan/TrafficGenerator/conf/DCTCP_CDF_.txt
+rate 0Mbps 100
+dscp 0 100

@@ -1,0 +1,44 @@
+iperf 3.1.3
+Linux host108 3.16.0-4-amd64 #1 SMP Debian 3.16.7-ckt11-1+deb8u4 (2015-09-19) x86_64
+Time: Wed, 07 Sep 2016 03:00:00 GMT
+Connecting to host 192.168.110.13, port 5014
+      Cookie: host108.1473217200.902598.10ff6fc701
+      TCP MSS: 1448 (default)
+[  5] local 192.168.110.8 port 47559 connected to 192.168.110.13 port 5014
+Starting Test: protocol: TCP, 1 streams, 131072 byte blocks, omitting 0 seconds, 786432000 bytes to send
+[ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+[  5]   0.00-0.50   sec  20.8 MBytes   350 Mbits/sec   85    140 KBytes       
+[  5]   0.50-1.00   sec  12.9 MBytes   216 Mbits/sec    0    150 KBytes       
+[  5]   1.00-1.50   sec  13.5 MBytes   227 Mbits/sec    0    157 KBytes       
+[  5]   1.50-2.00   sec  12.9 MBytes   217 Mbits/sec    0    161 KBytes       
+[  5]   2.00-2.50   sec  13.0 MBytes   219 Mbits/sec    0    165 KBytes       
+[  5]   2.50-3.00   sec  12.8 MBytes   215 Mbits/sec    0    167 KBytes       
+[  5]   3.00-3.50   sec  14.8 MBytes   248 Mbits/sec    0    171 KBytes       
+[  5]   3.50-4.00   sec  15.2 MBytes   254 Mbits/sec    0    175 KBytes       
+[  5]   4.00-4.50   sec  14.6 MBytes   246 Mbits/sec    0    181 KBytes       
+[  5]   4.50-5.00   sec  15.0 MBytes   252 Mbits/sec    0    187 KBytes       
+[  5]   5.00-5.50   sec  14.5 MBytes   244 Mbits/sec    3    137 KBytes       
+[  5]   5.50-6.00   sec  12.2 MBytes   205 Mbits/sec    0    153 KBytes       
+[  5]   6.00-6.50   sec  13.7 MBytes   230 Mbits/sec    0    165 KBytes       
+[  5]   6.50-7.00   sec  14.3 MBytes   240 Mbits/sec    0    174 KBytes       
+[  5]   7.00-7.50   sec  15.5 MBytes   260 Mbits/sec    0    181 KBytes       
+[  5]   7.50-8.00   sec  16.0 MBytes   269 Mbits/sec    0    185 KBytes       
+[  5]   8.00-8.50   sec  16.9 MBytes   284 Mbits/sec    0    188 KBytes       
+[  5]   8.50-9.00   sec  16.4 MBytes   276 Mbits/sec    0    189 KBytes       
+[  5]   9.00-9.50   sec  19.6 MBytes   329 Mbits/sec    0    191 KBytes       
+[  5]   9.50-10.00  sec  19.8 MBytes   332 Mbits/sec    0    192 KBytes       
+[  5]  10.00-10.50  sec  24.0 MBytes   403 Mbits/sec    0    195 KBytes       
+[  5]  10.50-11.00  sec  58.5 MBytes   981 Mbits/sec    0    204 KBytes       
+[  5]  11.00-11.50  sec  59.8 MBytes  1004 Mbits/sec    0    218 KBytes       
+[  5]  11.50-12.00  sec  50.5 MBytes   848 Mbits/sec    0    230 KBytes       
+[  5]  12.00-12.50  sec  40.8 MBytes   684 Mbits/sec    0    239 KBytes       
+[  5]  12.50-13.00  sec   110 MBytes  1849 Mbits/sec    0    262 KBytes       
+[  5]  13.00-13.34  sec   102 MBytes  2555 Mbits/sec    0    276 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+Test Complete. Summary Results:
+[ ID] Interval           Transfer     Bandwidth       Retr
+[  5]   0.00-13.34  sec   750 MBytes   472 Mbits/sec   88             sender
+[  5]   0.00-13.34  sec   749 MBytes   471 Mbits/sec                  receiver
+CPU Utilization: local/sender 1.9% (0.1%u/1.7%s), remote/receiver 0.0% (0.0%u/0.0%s)
+
+iperf Done.

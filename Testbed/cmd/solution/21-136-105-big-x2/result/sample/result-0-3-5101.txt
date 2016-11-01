@@ -1,0 +1,104 @@
+{
+	"start":	{
+		"connected":	[{
+				"socket":	5,
+				"local_host":	"192.168.110.13",
+				"local_port":	35545,
+				"remote_host":	"192.168.110.16",
+				"remote_port":	5101
+			}],
+		"version":	"iperf 3.1.3",
+		"system_info":	"Linux host113 3.16.0-4-amd64 #1 SMP Debian 3.16.7-ckt20-1+deb8u3 (2016-01-17) x86_64",
+		"timestamp":	{
+			"time":	"Tue, 20 Sep 2016 05:20:00 GMT",
+			"timesecs":	1474348800
+		},
+		"connecting_to":	{
+			"host":	"192.168.110.16",
+			"port":	5101
+		},
+		"cookie":	"host113.1474348800.851643.40e5319308",
+		"tcp_mss_default":	1448,
+		"test_start":	{
+			"protocol":	"TCP",
+			"num_streams":	1,
+			"blksize":	131072,
+			"omit":	0,
+			"duration":	0,
+			"bytes":	2967470080,
+			"blocks":	0,
+			"reverse":	0
+		}
+	},
+	"intervals":	[{
+			"streams":	[{
+					"socket":	5,
+					"start":	0,
+					"end":	34.218464,
+					"seconds":	34.218464,
+					"bytes":	2967682376,
+					"bits_per_second":	693820128.190858,
+					"retransmits":	757,
+					"snd_cwnd":	224440,
+					"rtt":	3187,
+					"omitted":	false
+				}],
+			"sum":	{
+				"start":	0,
+				"end":	34.218464,
+				"seconds":	34.218464,
+				"bytes":	2967682376,
+				"bits_per_second":	693820128.190858,
+				"retransmits":	757,
+				"omitted":	false
+			}
+		}],
+	"end":	{
+		"streams":	[{
+				"sender":	{
+					"socket":	5,
+					"start":	0,
+					"end":	34.218464,
+					"seconds":	34.218464,
+					"bytes":	2967682376,
+					"bits_per_second":	693820123.356638,
+					"retransmits":	757,
+					"max_snd_cwnd":	224440,
+					"max_rtt":	3187,
+					"min_rtt":	3187,
+					"mean_rtt":	3187
+				},
+				"receiver":	{
+					"socket":	5,
+					"start":	0,
+					"end":	34.218464,
+					"seconds":	34.218464,
+					"bytes":	2963886480,
+					"bits_per_second":	692932673.590360
+				}
+			}],
+		"sum_sent":	{
+			"start":	0,
+			"end":	34.218464,
+			"seconds":	34.218464,
+			"bytes":	2967682376,
+			"bits_per_second":	693820123.356638,
+			"retransmits":	757
+		},
+		"sum_received":	{
+			"start":	0,
+			"end":	34.218464,
+			"seconds":	34.218464,
+			"bytes":	2963886480,
+			"bits_per_second":	692932673.590360
+		},
+		"cpu_utilization_percent":	{
+			"host_total":	2.934617,
+			"host_user":	0.116563,
+			"host_system":	2.809166,
+			"remote_total":	0.223808,
+			"remote_user":	0.015360,
+			"remote_system":	0.208130
+		}
+	}
+}

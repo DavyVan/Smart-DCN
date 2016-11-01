@@ -13,3 +13,4 @@ display: 250
 max_iter: 1000000000
 # solver mode: CPU or GPU
 solver_mode: GPU
+
