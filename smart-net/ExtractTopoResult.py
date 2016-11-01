@@ -2,8 +2,9 @@ import caffe
 import numpy
 import os
 
-PRETRAINED_MODEL = "_iter_100000.caffemodel"
-TEST_MODEL_PATH = 'smart-net-test.protobuf'
+PRETRAINED_MODEL = "_iter_1000.caffemodel"
+#TEST_MODEL_PATH = 'smart-net-test.protobuf'
+TEST_MODEL_PATH = 'smart-net_wmw-test.protobuf'
 TEST_DATA_SIZE = 200
 TEST_DATA_OFFSET = 800
 DEMAND_ROW_NUM = 32
@@ -30,6 +31,10 @@ def main():
         # Which layer we want to extract
         layer = "output1"
         result = net.forward()[layer][0]    # It's an array
+	
+	#if test_index == 0:
+	#    for ii in result:
+	#    	print ii
 
         # normalization and round
         # find min and max
@@ -40,6 +45,8 @@ def main():
                 _min = item
             elif item > _max:
                 _max = item
+	
+	#print "min = %f, max = %f" %(_min ,_max)
 
         #normalize
         for index, value in enumerate(result):
@@ -56,7 +63,7 @@ def main():
                     index += 1
 
         # Write result_topo into files
-        f = open("/home/fanquan/Desktop/Result/result" + str(test_index + TEST_DATA_OFFSET) + ".txt", 'w')
+        f = open("/home/fanquan/Desktop/Result4/result" + str(test_index + TEST_DATA_OFFSET) + ".txt", 'w')
         for i in range(0, DEMAND_ROW_NUM):
             for j in range(0, DEMAND_ROW_NUM):
                 f.write(str(result_topo[i][j]) + " ")

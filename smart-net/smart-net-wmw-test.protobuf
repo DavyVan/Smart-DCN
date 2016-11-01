@@ -1,0 +1,227 @@
+name: "smart-net-test"
+layer {
+  name: "data"
+  type: "Input"
+  top: "demand"
+  input_param {
+    shape: {dim: 1 dim: 1 dim: 8 dim: 8}
+  }
+}
+
+layer {
+  name: "fc1"
+  type: "InnerProduct"
+  bottom: "demand"
+  top: "fc1"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  inner_product_param {
+    num_output: 1000
+    weight_filler {
+      type: "gaussian"
+      std: 0.005
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.1
+    }
+  }
+}
+
+
+layer{
+	name: "relu_fc1"
+	type: "ReLU"
+	bottom: "fc1"
+	top: "fc1"
+}
+
+layer {
+  name: "dropfc1"
+  type: "Dropout"
+  bottom: "fc1"
+  top: "fc1"
+  include {
+      phase: TRAIN
+  }
+  dropout_param{
+    dropout_ratio:0.3
+  }
+
+}
+
+
+
+layer {
+  name: "fc2"
+  type: "InnerProduct"
+  bottom: "fc1"
+  top: "fc2"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  inner_product_param {
+    num_output: 3000
+    weight_filler {
+      type: "gaussian"
+      std: 0.005
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.1
+    }
+  }
+}
+
+layer{
+	name: "relu_fc2"
+	type: "ReLU"
+	bottom: "fc2"
+	top: "fc2"
+}
+
+layer {
+  name: "dropfc2"
+  type: "Dropout"
+  bottom: "fc2"
+  top: "fc2"
+  include {
+      phase: TRAIN
+  }
+  dropout_param{
+    dropout_ratio:0.3
+  }
+}
+
+layer {
+  name: "fc3"
+  type: "InnerProduct"
+  bottom: "fc2"
+  top: "fc3"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  inner_product_param {
+    num_output: 5000
+    weight_filler {
+      type: "gaussian"
+      std: 0.005
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.1
+    }
+  }
+}
+
+layer{
+	name: "relu_fc3"
+	type: "ReLU"
+	bottom: "fc3"
+	top: "fc3"
+}
+
+layer {
+  name: "dropfc3"
+  type: "Dropout"
+  bottom: "fc3"
+  top: "fc3"
+  include {
+      phase: TRAIN
+  }
+  dropout_param{
+    dropout_ratio:0.3
+  }
+}
+
+layer {
+  name: "fc4"
+  type: "InnerProduct"
+  bottom: "fc3"
+  top: "fc4"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  inner_product_param {
+    num_output: 2000
+    weight_filler {
+      type: "gaussian"
+      std: 0.005
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.1
+    }
+  }
+}
+
+layer{
+	name: "relu_fc4"
+	type: "ReLU"
+	bottom: "fc4"
+	top: "fc4"
+}
+
+layer {
+  name: "dropfc4"
+  type: "Dropout"
+  bottom: "fc4"
+  top: "fc4"
+  include {
+      phase: TRAIN
+  }
+  dropout_param{
+    dropout_ratio:0.3
+  }
+}
+
+
+layer {
+    name: "output1"
+    type: "MultiOutput"
+    bottom: "fc4"
+    top: "output1"
+    param {
+        lr_mult: 1
+        decay_mult: 1
+    }
+    param {
+        lr_mult: 2
+        decay_mult: 0
+    }
+    multi_output_param {
+        num_output: 1
+        weight_filler {
+            type: "gaussian"
+            std: 0.005
+        }
+        bias_filler {
+            type: "constant"
+            value: 0.1
+        }
+
+        full_topo_file: "/home/fanquan/Desktop/output_full_topo4.txt"
+        layer_no: 1
+    }
+}
