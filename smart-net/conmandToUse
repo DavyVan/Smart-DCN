@@ -1,0 +1,16 @@
+command train: 
+../../caffe-with-CRF/build/tools/caffe train -solver solver.prototxt
+
+netPlot:
+../../caffe-with-CRF/python/draw_net.py smart-net-wmw.protobuf netPlot.png
+
+
+caffe 根目录
+make all -j8
+make pycaffe -j8
+make test -j8
+make runtest -j8
+
+
+
+
